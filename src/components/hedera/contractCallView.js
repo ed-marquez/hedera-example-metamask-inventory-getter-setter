@@ -13,7 +13,7 @@ async function contractExecuteFcn(walletData, network, contractAddress, partName
 	let outText;
 	try {
 		// EXECUTE CONTRACT FUNCTION
-		const gasLimit = 0;
+		const gasLimit = 100000;
 		const myContract = new ethers.Contract(contractAddress, abi, signer);
 		const callTx = await myContract.getAmount(partName, { gasLimit: gasLimit });
 		const callResult = callTx.toString();
